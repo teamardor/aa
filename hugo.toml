@@ -1,0 +1,4 @@
+baseURL = 'https://ardoradventures.netlify.app/'
+languageCode = 'en-us'
+title = 'Ardor Adventures'
+theme = 'ananke'
