@@ -1,0 +1,69 @@
+backend:
+  name: git-gateway
+  branch: master  # or main, depending on your repo
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "updates"
+    label: "Homepage Updates"
+    folder: "content/updates"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "publishDate", widget: "datetime" }
+      - { label: "Expire Date", name: "expiryDate", widget: "datetime", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "events"
+    label: "Event Pages"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Hero Image", name: "hero", widget: "image", required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "recaps"
+    label: "Race Recaps"
+    folder: "content/recaps"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Event Date", name: "date", widget: "datetime" }
+      - { label: "Gallery Link", name: "gallery", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "team-ardor"
+    label: "Team Ardor"
+    folder: "content/community/team-ardor"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "rogue-seals"
+    label: "Rogue Seals"
+    folder: "content/community/rogue-seals"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "sponsors"
+    label: "Sponsors Page"
+    folder: "content/sponsors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Sponsor Logos", name: "logos", widget: "list", field: { label: "Image", name: "image", widget: "image" } }
+      - { label: "Body", name: "body", widget: "markdown" }
